@@ -1,0 +1,376 @@
+import javax.swing.JOptionPane;
+public class Fase1 {
+public static void main (String[]args) {
+
+	String jogador1;
+	String jogador2;
+	
+	
+		
+	int point1=0;
+	int point2=0;
+	
+	int escolha1[]=new int[3];
+	int escolha2[]=new int[3];
+
+	JOptionPane.showMessageDialog(null, "Bem vindo jogador 1, coloque o seu nome e suas futuras jogadas num \n Pedra Papel ou Tesoura \n numa melhor de 3!");
+	jogador1=JOptionPane.showInputDialog("Qual o seu nome?");
+
+	escolha1[0]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	JOptionPane.showMessageDialog(null, "Agora é a vez do jogador 2, coloque o seu nome e suas futuras jogadas num \n Pedra Papel ou Tesoura \n numa melhor de 3!");
+	jogador2=JOptionPane.showInputDialog("Qual o seu nome?");
+
+	escolha2[0]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+	
+	JOptionPane.showMessageDialog(null, "Vamos para a 1° rodada valendo 15 pontos cada! \n Pedra Papel Tesoooura!");
+
+	while(escolha1[0]==escolha2[0]) {
+		JOptionPane.showMessageDialog(null, "Empate, Joguem de novo");
+		escolha1[0]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+		
+		escolha2[0]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	}
+	
+	while(escolha1[0]!=2||escolha1[0]!=0||escolha1[0]!=5&&escolha2[0]!=2||escolha2[0]!=0||escolha2[0]!=5) {
+		JOptionPane.showMessageDialog(null, "ERRO! Jogada inválida, joguem de novo");
+		
+		escolha1[0]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+		
+		escolha2[0]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	}
+
+	if(escolha1[0]==0 && escolha2[0]==2) {
+		JOptionPane.showMessageDialog(null, "Pedra, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha1[0]==2 && escolha2[0]==5) {
+		JOptionPane.showMessageDialog(null, "Tesoura, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha1[0]==5 && escolha2[0]==0) {
+		JOptionPane.showMessageDialog(null, "Papel, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha2[0]==0 && escolha1[0]==2) {
+		JOptionPane.showMessageDialog(null, "Pedra! " + jogador2 + " ganhou!");
+		point2= point2 + 15;
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+	}
+	
+	else if(escolha2[0]==2 && escolha1[0]==5) {
+		point2= point2 + 15;
+
+		JOptionPane.showMessageDialog(null, "Tesoura! " + jogador2 + " ganhou!");
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+
+	}
+	
+	else if(escolha2[0]==5 && escolha1[0]==0) {
+		point2= point2 + 15;
+
+		JOptionPane.showMessageDialog(null, "Papel! " + jogador2 + " ganhou!");
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+	}
+	
+
+
+	JOptionPane.showMessageDialog(null, "Agora vamos para nossa segunda rodada");
+	
+	escolha1[1]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	escolha2[1]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	JOptionPane.showMessageDialog(null, "Segunda rodada valendo mais 15 pontos \n pedra, papel, tesouraaa");
+
+	
+	while(escolha1[1]==escolha2[1]) {
+		JOptionPane.showMessageDialog(null, "Empate, Joguem de novo");
+		escolha1[1]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+		
+		escolha2[1]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	}
+	
+	while(escolha1[1]!=2||escolha1[1]!=0||escolha1[1]!=5||escolha2[1]!=2||escolha2[1]!=0||escolha2[1]!=5) {
+		JOptionPane.showMessageDialog(null, "ERRO! Jogada inválida, joguem de novo");
+		
+		escolha1[1]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+		
+		escolha2[1]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	}
+	
+	if(escolha1[1]==0 && escolha2[1]==2) {
+		JOptionPane.showMessageDialog(null, "Pedra, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha1[1]==2 && escolha2[1]==5) {
+		JOptionPane.showMessageDialog(null, "Tesoura, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha1[1]==5 && escolha2[1]==0) {
+		JOptionPane.showMessageDialog(null, "Papel, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+	}
+	
+	else if(escolha2[1]==0 && escolha1[1]==2) {
+		JOptionPane.showMessageDialog(null, "Pedra! " + jogador2 + " ganhou!");
+		point2= point2 + 15;
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+	}
+	
+	else if(escolha2[1]==2 && escolha1[1]==5) {
+		point2= point2 + 15;
+
+		JOptionPane.showMessageDialog(null, "Tesoura! " + jogador2 + " ganhou!");
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+
+	}
+	
+	else if(escolha2[1]==5 && escolha1[1]==0) {
+		point2= point2 + 15;
+
+		JOptionPane.showMessageDialog(null, "Papel! " + jogador2 + " ganhou!");
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+	}
+
+	
+	
+	JOptionPane.showMessageDialog(null, "Vamos para a Rodada Final!!! \n Escolhem suas Jogadas sabiamente!");
+
+	escolha1[2]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	escolha2[2]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	JOptionPane.showMessageDialog(null, "Terceira rodada valendo mais 15 pontos \n pedra, papel, tesouraaa");
+	
+	while(escolha1[2]==escolha2[2]) {
+		JOptionPane.showMessageDialog(null, "Empate, Joguem de novo");
+		escolha1[2]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+		
+		escolha2[2]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	}
+	
+	while(escolha1[2]!=2||escolha1[2]!=0||escolha1[2]!=5||escolha2[2]!=2||escolha2[2]!=0||escolha2[2]!=5) {
+		JOptionPane.showMessageDialog(null, "ERRO! Jogada inválida, joguem de novo");
+		
+		escolha1[2]=Integer.parseInt(JOptionPane.showInputDialog(null, jogador1+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+		
+		escolha2[2]=Integer.parseInt(JOptionPane.showInputDialog(null,  jogador2+" Faça sua escolha através dos seus dedos: \n (pedra=0, papel=5, tesoura=2) "));
+
+	}
+	
+	if(escolha1[2]==0 && escolha2[2]==2) {
+		JOptionPane.showMessageDialog(null, "Pedra, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha1[2]==2 && escolha2[2]==5) {
+		JOptionPane.showMessageDialog(null, "Tesoura, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+
+	}
+	
+	else if(escolha1[2]==5 && escolha2[2]==0) {
+		JOptionPane.showMessageDialog(null, "Papel, "+jogador1 + " ganhou");
+		point1= point1 + 15;
+		JOptionPane.showMessageDialog(null,  jogador1 + " Está com " +point1 +" pontos!");
+	}
+	
+	else if(escolha2[2]==0 && escolha1[2]==2) {
+		JOptionPane.showMessageDialog(null, "Pedra! " + jogador2 + " ganhou!");
+		point2= point2 + 15;
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+	}
+	
+	else if(escolha2[2]==2 && escolha1[2]==5) {
+		point2= point2 + 15;
+
+		JOptionPane.showMessageDialog(null, "Tesoura! " + jogador2 + " ganhou!");
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+
+	}
+	
+	else if(escolha2[2]==5 && escolha1[2]==0) {
+		point2= point2 + 15;
+
+		JOptionPane.showMessageDialog(null, "Papel! " + jogador2 + " ganhou!");
+		JOptionPane.showMessageDialog(null,  jogador2 + " Está com " +point2 +" pontos!");
+	}
+	
+	if(point1>point2) {
+		JOptionPane.showMessageDialog(null, "E o vencedor dessa rodada é o \n"+ jogador1+"!!! Com "+point1+" Pontos!!!");
+	}
+	
+	else if(point2>point1) {
+		JOptionPane.showMessageDialog(null, "E o vencedor dessa rodada é o \n"+ jogador2+"!!! Com "+point2+" Pontos!!!");
+	}
+	
+	else if(point2==point1) {
+		JOptionPane.showMessageDialog(null, "Empate... Ambos estão com " + point1+ "Pontos");
+	}
+	
+	int resposta1[]=new int[3];
+	int resposta2[]=new int[3];
+	
+	JOptionPane.showMessageDialog(null, "Passamos pela fase 1, e agora vamos passar para a Fase 2 com um Quiz de Java!");
+	
+	JOptionPane.showMessageDialog(null, "1-) "+jogador1+" responda: \n Observe o código:\n"
+			+ "int x = 8;\r\n"
+			+ "int y = 3;\r\n"
+			+ "System.out.println(x + y * 2);\r\n");
+
+resposta1[0]=Integer.parseInt(JOptionPane.showInputDialog("Qual será o resultado exibido?\n"
+		+ "			1- 22\n"
+		+ "			2- 14\n"
+		+ "		    3- 11 "));
+
+if(resposta1[0]==2) {
+	point1= point1+15;
+	JOptionPane.showMessageDialog(null, "Parábens! Resposta certa!! \n Resposta:"+resposta1[0]+"\n"+jogador1+" está com "+ point1);
+	
+}
+else {
+	JOptionPane.showMessageDialog(null, "ERRADO.... \n Agora vamos para a pergunta pro jogador2");
+}
+JOptionPane.showMessageDialog(null, "1-)" +jogador2+ " responda: \nConsidere o código:\n"
+		
+		+ "int idade = 17;\r\n"
+		+ "\r\n"
+		+ "if (idade >= 18) {\r\n"
+		+ "    System.out.println(\"Maior de idade\");\r\n"
+		+ "} else {\r\n"
+		+ "    System.out.println(\"Menor de idade\");\r\n"
+		+ "}");
+
+resposta2[0]=Integer.parseInt(JOptionPane.showInputDialog("Qual mensagem será exibida?\r\n"
+		+ "\r\n"
+		+ "1) Maior de idade\r\n"
+		+ "\r\n"
+		+ "2) Menor de idade\r\n"
+		+ "\r\n"
+		+ "3) O programa apresentará um erro."));
+
+if(resposta2[0]==2) {
+	point2= point2+15;
+JOptionPane.showMessageDialog(null, "Parábens! Resposta certa!! \n Resposta:"+resposta2[0]+jogador2+" Está com "+ point2);
+}
+else {
+JOptionPane.showMessageDialog(null, "ERRADO.... \n Agora vamos para a pergunta pro jogador1");
+}
+
+/*segunda rodada*/
+
+JOptionPane.showMessageDialog(null, "2-)"+ jogador1+ ", responda: \nObserve o código:\r\n"
+		+ "\r\n"
+		
+		+ "int nota = 9;\r\n"
+		+ "\r\n"
+		+ "if (nota >= 8) {\r\n"
+		+ "    System.out.println(\"Aprovado com destaque\");\r\n"
+		+ "} else if (nota >= 6) {\r\n"
+		+ "    System.out.println(\"Aprovado\");\r\n"
+		+ "} else {\r\n"
+		+ "    System.out.println(\"Reprovado\");\r\n"
+		+ "}");
+
+resposta1[1]=Integer.parseInt(JOptionPane.showInputDialog("Qual será o resultado?\r\n"
+		+ "\r\n"
+		+ "1) Aprovado com destaque\r\n"
+		+ "\r\n"
+		+ "2) Aprovado\r\n"
+		+ "\r\n"
+		+ "3) Reprovado "));
+
+if(resposta1[1]==1) {
+	point1= point1+15;
+JOptionPane.showMessageDialog(null, "Parábens! Resposta certa!! \n Resposta:"+resposta1[1]+"\n"+jogador1+" está com "+ point1);
+
+}
+else {
+JOptionPane.showMessageDialog(null, "ERRADO.... \n Agora vamos para a pergunta pro jogador2");
+}
+
+
+JOptionPane.showMessageDialog(null, "2-)" +jogador2+",\n Sobre variáveis e operadores em Java, observe o código:\n  int a = 10;  int b = 5;  System.out.println (a + b) ; ");
+
+resposta2[1]=Integer.parseInt(JOptionPane.showInputDialog("Qual será o resultado exibido?\r\n"
+		+ "1) 5\r\n"
+		+ "2) 10\r\n"
+		+ "3) 15"));
+
+if(resposta2[1]==3) {
+	point2= point2+15;
+JOptionPane.showMessageDialog(null, "Parábens! Resposta certa!! \n Resposta:"+resposta2[1]+jogador2+" está com "+ point2);
+}
+else  {
+JOptionPane.showMessageDialog(null, "ERRADO.... \n Agora vamos para a pergunta pro jogador1");
+}
+/*terceira rodada*/
+
+JOptionPane.showMessageDialog(null, "3-)" +jogador1+", responda a sua ultima pergunta valendo 15 pontos :\nObserve o código: int numero = 12;\n if (numero % 2 == 0)\n  else ");
+
+resposta1[2]=Integer.parseInt(JOptionPane.showInputDialog("\\n Qual mensagem será exibida?\n 1) Par \n 2) Ímpar\n 3) 0 "));
+
+if(resposta1[2]==1) {
+	point1= point1+15;
+JOptionPane.showMessageDialog(null, "Parábens! Resposta certa!! \n Resposta:"+resposta1[2] + "\n"+jogador1+" está com "+ point1);
+}
+else {
+JOptionPane.showMessageDialog(null, "ERRADO.... \n Agora vamos para a pergunta pro jogador2");
+}
+
+JOptionPane.showMessageDialog(null, "3-) " +jogador2+", a ultima questão é: \n 3. Em Java, considere o código: int[] numeros = 13; int resultado = numeros[1] + numeros[3]; System.out.println(resultado);");
+
+resposta2[2]=Integer.parseInt(JOptionPane.showInputDialog(" Qual será o resultado exibido?\n A) 17 \nB) 20 \nC) 23"));
+
+if(resposta2[2]==1) {
+	point2= point2+15;
+JOptionPane.showMessageDialog(null, "Parábens! Resposta certa!! \n Resposta:"+resposta2[2]+jogador2+" está com "+ point2);
+}
+else  {
+JOptionPane.showMessageDialog(null, "ERRADO.... \n Agora vamos para a pergunta pro jogador1");
+}
+
+if(point1>point2) {
+	JOptionPane.showMessageDialog(null, "Quem assume o nosso jogo é o "+jogador1+", com "+ point1);
+
+}
+
+else if(point2>point1) {
+	JOptionPane.showMessageDialog(null, "Quem assume o nosso jogo é o "+jogador2+", com "+ point2);
+
+}
+
+else {
+	
+		JOptionPane.showMessageDialog(null, "Empate por enquanto com ambos tendo: "+point1);
+}
+
+JOptionPane.showMessageDialog(null, "Agora, iremos para o nosso ultimo jogo! \n Ainda será um Quiz, mas agora \n Com temas específicos");
+
+}
+}
