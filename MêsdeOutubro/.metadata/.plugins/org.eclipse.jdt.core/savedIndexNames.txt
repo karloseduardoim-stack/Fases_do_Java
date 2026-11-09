@@ -1,5 +1,0 @@
-INDEX VERSION 1.134+D:\Mês_de_Outubro\MêsdeOutubro\.metadata\.plugins\org.eclipse.jdt.core
-429276621.index
-2821708784.index
-4196396355.index
-3329419061.index
